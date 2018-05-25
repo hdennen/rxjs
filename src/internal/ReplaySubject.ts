@@ -30,6 +30,10 @@ export class ReplaySubject<T> extends Subject<T> {
     }
   }
 
+  public clearBuffer(): void {
+    this._events.length = 0;
+  }
+
   private nextInfiniteTimeWindow(value: T): void {
     const _events = this._events;
     _events.push(value);
